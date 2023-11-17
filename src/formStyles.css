@@ -3,29 +3,22 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    background-color: #007bff;
-    padding: 10px 0;
+    padding: 40px;
+    margin: 40px 0;
 }
 
 .form-container label {
     display: block;
     font-weight: bold;
     margin-top: 10px;
+    color: black;
 }
 
 .form-container input[type="text"],
 .form-container input[type="date"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -46,10 +39,6 @@
 
 /* Responsive styles for smaller screens */
 @media (max-width: 400px) {
-    .form-container {
-        max-width: 100%;
-        /* Full width for smaller screens */
-    }
 
     .form-container input[type="text"],
     .form-container input[type="date"] {
