@@ -4,11 +4,15 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 20px 0;
-    max-width: 400px;
-    /* Limit the form width */
+    max-width: 800px;
     margin: 0 auto;
-    /* Center the form horizontally */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #007bff;
+    padding: 10px 0;
 }
 
 .form-container label {
@@ -41,11 +45,14 @@
 }
 
 /* Responsive styles for smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     .form-container {
-        width: 100%;
+        max-width: 100%;
         /* Full width for smaller screens */
-        margin: 0;
-        /* Remove horizontal margin for smaller screens */
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="date"] {
+        width: 100%;
     }
 }

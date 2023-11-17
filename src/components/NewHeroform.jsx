@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../App.css'; // Import the shared styles
 import '../formStyles.css'; // Import the form-specific styles
+import Navbar from './NavBar';
 
 const NewHeroForm = () => {
     const [heroData, setHeroData] = useState({
@@ -34,7 +35,9 @@ const NewHeroForm = () => {
     };
 
     return (
+
         <div className="form-container">
+            <Navbar/>
             <h1>Add a New Hero</h1>
             <form onSubmit={handleSubmit}>
                 <div>

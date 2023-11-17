@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SuperheroCard from './SuperheroCard';
 import axios from 'axios'
 
+
 const API = import.meta.env.VITE_APP_API_URL;
 
 const Superhero_Profiles = () => {

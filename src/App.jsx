@@ -8,15 +8,16 @@ const App = () => {
   return (
     <>
       <Router>
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
           <Route path='/' element={<Superhero_Profiles />} />
           <Route path='/list' element={<Superhero_Profiles />} />
-          <Route path='/new' element={<NewHeroForm/>} />
+          <Route path='/new' element={<NewHeroForm />} />
         </Routes>
       </Router>
     </>
   )
 }
+
 
 export default App

@@ -30,14 +30,6 @@ h1 {
   padding: 5px 15px;
 }
 
-.form-container {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px 0;
-}
-
 .superhero-list {
   display: flex;
   flex-wrap: wrap;
