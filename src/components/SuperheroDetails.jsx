@@ -25,7 +25,7 @@ const SuperheroDetails = ({ }) => {
     return (
         <div className='superhero-details'>
             <SuperheroCard superhero={superhero} />
-            <Link to={`/edit/${key}`}><button className="edit-button">Edit</button></Link>
+            <Link to={`/${key}/edit`}><button className="edit-button">Edit</button></Link>
         </div>
     )
 }
