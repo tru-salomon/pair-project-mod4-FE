@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <>
         <div>Welcome to the Superhero Info App</div>
-            <div>Press Home to Start</div>
+            <div>Press Heroes to Start</div>
         </>
     )
 }
