@@ -1,5 +1,7 @@
 /* src/App.css */
 body {
+  display: flex;
+  align-items: center;
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
@@ -7,7 +9,7 @@ body {
 }
 
 .container {
-  margin: 0 ;
+  margin: 0;
   padding: 20px;
 }
 
@@ -19,8 +21,9 @@ h1 {
 .navbar {
   display: flex;
   justify-content: space-around;
-  background-color: #007bff;
+  background-color: #242424;
 }
+
 
 .nav-link {
   color: #fff;
