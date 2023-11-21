@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../App.css';
 import '../formStyles.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_APP_API_URL;
 
 const EditHeroForm = () => {
     const [heroData, setHeroData] = useState(null);
     const { key } = useParams();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios
@@ -32,6 +34,7 @@ const EditHeroForm = () => {
         axios.put(`${API}/ids/${key}`, heroData)
             .then((response) => {
                 console.log('Hero updated:', response.data);
+                navigate(`/superhero/${key}`);
             })
             .catch((error) => console.error('Error updating hero:', error));
     };

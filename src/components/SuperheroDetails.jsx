@@ -16,7 +16,6 @@ const SuperheroDetails = ({ }) => {
         axios
             .get(`${API}/ids/${key}`)
             .then(response => {
-                console.log(response.data);
                 setSuperhero(response.data);
             })
             .catch(error => console.error('Error fetching data:', error));
@@ -25,7 +24,7 @@ const SuperheroDetails = ({ }) => {
     return (
         <div className='superhero-details'>
             <SuperheroCard superhero={superhero} />
-            <Link to={`/${key}/edit`}><button className="edit-button">Edit</button></Link>
+            <Link to={`/superhero/${key}/edit`}><button className="edit-button">Edit</button></Link>
         </div>
     )
 }
