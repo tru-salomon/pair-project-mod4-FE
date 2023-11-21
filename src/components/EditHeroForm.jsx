@@ -1,17 +1,21 @@
-// src/NewHeroForm.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../App.css'; // Import the shared styles
-import '../formStyles.css'; // Import the form-specific styles
+import '../App.css';
+import '../formStyles.css';
+import { useParams } from 'react-router-dom';
 
+const API = import.meta.env.VITE_APP_API_URL;
 
-const NewHeroForm = () => {
-    const [heroData, setHeroData] = useState({
-        alias: '',
-        lastname: '',
-        dob: '',
-        adult: true,
-    });
+const EditHeroForm = () => {
+    const [heroData, setHeroData] = useState(null);
+    const { key } = useParams();
+
+    useEffect(() => {
+        axios
+            .get(`${API}/ids/${key}`)
+            .then(response => setHeroData(response.data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, [key]);
 
     const handleChange = (e) => {
         const { name, value, type } = e.target;
@@ -25,20 +29,22 @@ const NewHeroForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Use Axios to send a POST request to your Express backend to add the new hero to the database
-        axios.post('http://your-backend-api-endpoint/add-superhero', heroData)
+        axios.put(`${API}/ids/${key}`, heroData)
             .then((response) => {
-                // Handle the response or navigation to another page if needed
-                console.log('New hero added:', response.data);
+                console.log('Hero updated:', response.data);
             })
-            .catch((error) => console.error('Error adding new hero:', error));
+            .catch((error) => console.error('Error updating hero:', error));
     };
+
+    if (!heroData) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className='container'>
             <div className='form-wrapper'>
                 <div className="form-container">
-                    <h1>Add a New Hero</h1>
+                    <h1>Edit Hero</h1>
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="alias">Alias:</label>
@@ -82,9 +88,8 @@ const NewHeroForm = () => {
                                 checked={heroData.adult}
                                 onChange={handleChange}
                             />
-
                         </div>
-                        <button type="submit">Submit</button>
+                        <button type="submit">Update</button>
                     </form>
                 </div>
             </div>
@@ -92,4 +97,4 @@ const NewHeroForm = () => {
     );
 };
 
-export default NewHeroForm;
+export default EditHeroForm;

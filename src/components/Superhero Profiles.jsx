@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SuperheroCard from './SuperheroCard';
 import axios from 'axios'
 
@@ -11,7 +12,10 @@ const Superhero_Profiles = () => {
     useEffect(() => {
         axios
             .get(`${API}/ids`)
-            .then(response => setSuperheroes(response.data))
+            .then(response => {
+                setSuperheroes(response.data)
+            }
+            )
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
@@ -20,7 +24,9 @@ const Superhero_Profiles = () => {
             <h1>Superhero Profiles</h1>
             <div className="superhero-list">
                 {superheroes.map(superhero => (
-                    <SuperheroCard key={superhero.key} superhero={superhero} />
+                    <Link to={`/superhero/${superhero.key}`} key={superhero.key}>
+                        <SuperheroCard key={superhero.key} superhero={superhero} />
+                    </Link>
                 ))}
             </div>
         </div>
