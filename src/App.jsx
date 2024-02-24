@@ -5,7 +5,7 @@ import Navbar from './components/NavBar';
 import NewHeroForm from './components/NewHeroform';
 import SuperheroDetails from './components/SuperheroDetails';
 import EditHeroForm from './components/EditHeroForm';
-import './App.css'
+import './App.css' 
 
 const App = () => {
   return (

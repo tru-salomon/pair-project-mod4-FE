@@ -1,10 +1,15 @@
-import React from 'react'
+import "./Home.css"
+
 
 const Home = () => {
     return (
         <>
-        <div>Welcome to the Superhero Info App</div>
-            <div>Press Heroes to Start</div>
+            <div className="home-container">
+                <section className="home-element">
+                    <div>Welcome to the Superhero Registry</div>
+                    <div>Press Heroes to Start</div>
+                </section>
+            </div>
         </>
     )
 }
