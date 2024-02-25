@@ -81,8 +81,8 @@ const EditHeroForm = () => {
                                 required
                             />
                         </div>
-                        <div>
-                            <label htmlFor="adult">Adult</label>
+                        <div className='checkbox'>
+                            <label className="check-label" htmlFor="adult">Adult</label>
                             <input
                                 type="checkbox"
                                 id="adult"
