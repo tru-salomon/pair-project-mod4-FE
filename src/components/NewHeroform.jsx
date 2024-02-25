@@ -38,7 +38,7 @@ const NewHeroForm = () => {
         <div className='container'>
             <div className='form-wrapper'>
                 <div className="form-container">
-                    <h1>Add a New Hero</h1>
+                    <h1>New Hero Form</h1>
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="alias">Alias:</label>
@@ -74,7 +74,7 @@ const NewHeroForm = () => {
                             />
                         </div>
                         <div className='checkbox'>
-                            <label htmlFor="adult">Adult</label>
+                            <label className='check-label' htmlFor="adult">Adult</label>
                             <input
                                 type="checkbox"
                                 id="adult"
