@@ -1,0 +1,25 @@
+.superhero-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.superhero-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.superhero-card p {
+    color: #555;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.title {
+    text-align: center;
+}

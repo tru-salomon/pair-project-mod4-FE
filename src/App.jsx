@@ -5,7 +5,8 @@ import Navbar from './components/NavBar';
 import NewHeroForm from './components/NewHeroform';
 import SuperheroDetails from './components/SuperheroDetails';
 import EditHeroForm from './components/EditHeroForm';
-import './App.css' 
+import NotFound from './components/NotFound';
+import './App.css'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/new' element={<NewHeroForm />} />
           <Route path='/superhero/:key' element={<SuperheroDetails />} />
           <Route path='/superhero/:key/edit' element={<EditHeroForm />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>

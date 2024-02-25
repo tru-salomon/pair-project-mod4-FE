@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SuperheroCard from './SuperheroCard';
 import axios from 'axios'
+import './Superhero Profiles.css';
 
 
 const API = import.meta.env.VITE_APP_API_URL;
@@ -21,7 +22,7 @@ const Superhero_Profiles = () => {
 
     return (
         <div className="container">
-            <h1>Superhero Profiles</h1>
+            <h1 className='title'>Superhero Profiles</h1>
             <div className="superhero-list">
                 {superheroes.map(superhero => (
                     <Link to={`/superhero/${superhero.key}`} key={superhero.key}>

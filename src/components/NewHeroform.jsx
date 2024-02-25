@@ -73,7 +73,7 @@ const NewHeroForm = () => {
                                 required
                             />
                         </div>
-                        <div>
+                        <div className='checkbox'>
                             <label htmlFor="adult">Adult</label>
                             <input
                                 type="checkbox"
