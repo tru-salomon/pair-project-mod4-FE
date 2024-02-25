@@ -1,5 +1,5 @@
 // src/NewHeroForm.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import '../App.css'; // Import the shared styles
 import '../formStyles.css'; // Import the form-specific styles
