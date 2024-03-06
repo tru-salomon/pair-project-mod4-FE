@@ -1,9 +1,8 @@
-// src/NewHeroForm.js
 import { useState } from 'react';
 import axios from 'axios';
-import '../App.css'; // Import the shared styles
-import '../formStyles.css'; // Import the form-specific styles
+import '../formStyles.css'; 
 
+const API = import.meta.env.VITE_APP_API_URL;
 
 const NewHeroForm = () => {
     const [heroData, setHeroData] = useState({
@@ -26,7 +25,7 @@ const NewHeroForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Use Axios to send a POST request to your Express backend to add the new hero to the database
-        axios.post('http://your-backend-api-endpoint/add-superhero', heroData)
+        axios.post(`${API}`, heroData)
             .then((response) => {
                 // Handle the response or navigation to another page if needed
                 console.log('New hero added:', response.data);
