@@ -1,6 +1,5 @@
 
 
-
 .superhero-details {
     display: flex;
     flex-direction: column;
@@ -8,4 +7,10 @@
     align-items: center;
     height: 100vh;
     text-align: center;
+    background: url('/public/images/heroes.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
 }
+
