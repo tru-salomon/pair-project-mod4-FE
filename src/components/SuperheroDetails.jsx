@@ -2,11 +2,11 @@ import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import SuperheroCard from './SuperheroCard'
-import './SuperheroDetails.css' 
+import './SuperheroDetails.css'
 
 const API = import.meta.env.VITE_APP_API_URL;
 
-const SuperheroDetails = ({ }) => {
+const SuperheroDetails = () => {
 
     const [superhero, setSuperhero] = useState([]);
 
