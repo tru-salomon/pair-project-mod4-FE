@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import SuperheroCard from './SuperheroCard';
 import axios from 'axios'
 import './Superhero Profiles.css';
+import { API } from '../api.js'
 
 
-const API = import.meta.env.VITE_APP_API_URL;
+
+
 
 const Superhero_Profiles = () => {
     const [superheroes, setSuperheroes] = useState([]);
