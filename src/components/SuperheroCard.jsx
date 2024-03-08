@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const SuperheroCard = ({ superhero }) => {
     return (
@@ -9,6 +9,15 @@ const SuperheroCard = ({ superhero }) => {
             <p>Adult: {superhero.adult ? 'Yes' : 'No'}</p>
         </div>
     );
+};
+
+SuperheroCard.propTypes = {
+    superhero: PropTypes.shape({
+        alias: PropTypes.string,
+        lastname: PropTypes.string,
+        dob: PropTypes.string,
+        adult: PropTypes.bool
+    }).isRequired
 };
 
 export default SuperheroCard;
