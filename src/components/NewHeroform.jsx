@@ -12,7 +12,7 @@ const NewHeroForm = () => {
         alias: '',
         lastname: '',
         dob: '',
-        adult: true,
+        adult: false,
     });
 
     const handleChange = (e) => {
@@ -27,10 +27,16 @@ const NewHeroForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Use Axios to send a POST request to your Express backend to add the new hero to the database
-        axios.put(`${API}`, heroData)
+        let dob = new Date(heroData.dob).toISOString();
+        let dataToSend = {
+            alias: heroData.alias,
+            lastname: heroData.lastname,
+            dob: dob,
+            adult: heroData.adult ? true : false
+        };
+        axios.post(`${API}/ids`, dataToSend)
             .then((response) => {
-                console.log('New hero added:', response.data);
+                console.log('New hero added:', response.data)
                 navigate(`superhero/${response.data.key}`)
             })
             .catch((error) => console.error('Error adding new hero:', error));

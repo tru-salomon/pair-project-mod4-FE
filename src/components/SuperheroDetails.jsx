@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import SuperheroCard from './SuperheroCard'
@@ -10,6 +10,18 @@ const SuperheroDetails = () => {
     const [superhero, setSuperhero] = useState({});
 
     const { key } = useParams();
+
+    const navigate = useNavigate();
+
+    const handleDelete = (e) => {
+        e.preventDefault();
+        axios.delete(`${API}/ids/${key}`)
+            .then((response) => {
+                console.log('Hero deleted:', response.data);
+                navigate(`/superhero`);
+            })
+            .catch((error) => console.error('Error deleting hero:', error));
+    }
 
     useEffect(() => {
         axios
@@ -25,7 +37,7 @@ const SuperheroDetails = () => {
             <SuperheroCard superhero={superhero} />
             <div className='buttons'>
                 <Link to={`/superhero/${key}/edit`}><button className="edit-button">Edit</button></Link>
-                <button className="delete-button">Delete</button>
+                <button className="delete-button" onClick={handleDelete}>Delete</button>
             </div>
         </div>
     )
