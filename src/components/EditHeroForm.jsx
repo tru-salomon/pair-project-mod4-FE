@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../formStyles.css';
 import { useParams, useNavigate } from 'react-router-dom';
+import { API } from '../api.js';
 
-const API = import.meta.env.VITE_APP_API_URL;
+
 
 const EditHeroForm = () => {
     const [heroData, setHeroData] = useState(null);
@@ -14,7 +15,14 @@ const EditHeroForm = () => {
     useEffect(() => {
         axios
             .get(`${API}/ids/${key}`)
-            .then(response => setHeroData(response.data))
+            .then(response => {
+                let dob = new Date(response.data.dob);
+                let superDob = `${dob.getFullYear()}-${String(dob.getMonth() + 1).padStart(2, '0')}-${String(dob.getDate()).padStart(2, '0')}`;
+                setHeroData({
+                    ...response.data,
+                    dob: superDob
+                });
+            })
             .catch(error => console.error('Error fetching data:', error));
     }, [key]);
 

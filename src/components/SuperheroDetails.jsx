@@ -7,7 +7,7 @@ import { API } from '../api.js'
 
 const SuperheroDetails = () => {
 
-    const [superhero, setSuperhero] = useState([]);
+    const [superhero, setSuperhero] = useState({});
 
     const { key } = useParams();
 
@@ -23,7 +23,10 @@ const SuperheroDetails = () => {
     return (
         <div className='superhero-details'>
             <SuperheroCard superhero={superhero} />
-            <Link to={`/superhero/${key}/edit`}><button className="edit-button">Edit</button></Link>
+            <div className='buttons'>
+                <Link to={`/superhero/${key}/edit`}><button className="edit-button">Edit</button></Link>
+                <button className="delete-button">Delete</button>
+            </div>
         </div>
     )
 }

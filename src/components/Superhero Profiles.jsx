@@ -5,10 +5,6 @@ import axios from 'axios'
 import './Superhero Profiles.css';
 import { API } from '../api.js'
 
-
-
-
-
 const Superhero_Profiles = () => {
     const [superheroes, setSuperheroes] = useState([]);
 

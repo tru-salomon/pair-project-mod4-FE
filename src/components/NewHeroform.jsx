@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../formStyles.css'; 
+import '../formStyles.css';
+import { API } from '../api';
 
-const API = import.meta.env.VITE_APP_API_URL;
 
 const NewHeroForm = () => {
+    const navigate = useNavigate();
+
     const [heroData, setHeroData] = useState({
         alias: '',
         lastname: '',
@@ -25,10 +28,10 @@ const NewHeroForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Use Axios to send a POST request to your Express backend to add the new hero to the database
-        axios.post(`${API}`, heroData)
+        axios.put(`${API}`, heroData)
             .then((response) => {
-                // Handle the response or navigation to another page if needed
                 console.log('New hero added:', response.data);
+                navigate(`superhero/${response.data.key}`)
             })
             .catch((error) => console.error('Error adding new hero:', error));
     };
