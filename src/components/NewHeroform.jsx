@@ -36,8 +36,8 @@ const NewHeroForm = () => {
         };
         axios.post(`${API}/ids`, dataToSend)
             .then((response) => {
-                console.log('New hero added:', response.data)
-                navigate(`superhero/${response.data.key}`)
+                // console.log(response.data);
+                navigate(`/superhero/${response.data.key}`);
             })
             .catch((error) => console.error('Error adding new hero:', error));
     };

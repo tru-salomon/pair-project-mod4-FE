@@ -18,7 +18,7 @@ const SuperheroDetails = () => {
         axios.delete(`${API}/ids/${key}`)
             .then((response) => {
                 console.log('Hero deleted:', response.data);
-                navigate(`/superhero`);
+                navigate(`/list`);
             })
             .catch((error) => console.error('Error deleting hero:', error));
     }
