@@ -30,7 +30,7 @@ const SuperheroDetails = () => {
                 setSuperhero(response.data);
             })
             .catch(error => console.error('Error fetching data:', error));
-    }, []);
+    }, [key]);
 
     return (
         <div className='superhero-details'>
