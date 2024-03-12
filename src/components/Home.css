@@ -1,7 +1,7 @@
 /* Home.css */
 
 body {
-    background: url('/Images/bg.jpeg') no-repeat center center fixed;
+    background: url('/public/bg.jpeg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -5,7 +5,7 @@
     align-items: center;
     height: 100vh;
     text-align: center;
-    background: url('/Images/heroes.jpeg') no-repeat center center fixed;
+    background: url('/public/heroes.jpeg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -17,5 +17,5 @@
     width: 50%;
     justify-content: space-evenly;
     align-items: center;
-    
+
 }

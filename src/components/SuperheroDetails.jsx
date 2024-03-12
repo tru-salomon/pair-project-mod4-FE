@@ -15,17 +15,17 @@ const SuperheroDetails = () => {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        axios.delete(`${API}/ids/${key}`)
+        axios.delete(`${API}/stats/${key}`)
             .then((response) => {
                 console.log('Hero deleted:', response.data);
-                navigate(`/list`);
+                navigate(`/superheroes`);
             })
             .catch((error) => console.error('Error deleting hero:', error));
     }
 
     useEffect(() => {
         axios
-            .get(`${API}/ids/${key}`)
+            .get(`${API}/stats/${key}`)
             .then(response => {
                 setSuperhero(response.data);
             })
