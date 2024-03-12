@@ -15,7 +15,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/list' element={<Superhero_Profiles />} />
+          <Route path='/superheroes' element={<Superhero_Profiles />} />
           <Route path='/new' element={<NewHeroForm />} />
           <Route path='/superhero/:key' element={<SuperheroDetails />} />
           <Route path='/superhero/:key/edit' element={<EditHeroForm />} />

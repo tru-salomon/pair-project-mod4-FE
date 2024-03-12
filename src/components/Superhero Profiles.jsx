@@ -10,7 +10,7 @@ const Superhero_Profiles = () => {
 
     useEffect(() => {
         axios
-            .get(`${API}/ids`)
+            .get(`${API}/stats`)
             .then(response => {
                 setSuperheroes(response.data)
             }

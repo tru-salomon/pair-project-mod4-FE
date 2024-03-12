@@ -34,7 +34,7 @@ const NewHeroForm = () => {
             dob: dob,
             adult: heroData.adult ? true : false
         };
-        axios.post(`${API}/ids`, dataToSend)
+        axios.post(`${API}/stats`, dataToSend)
             .then((response) => {
                 // console.log(response.data);
                 navigate(`/superhero/${response.data.key}`);

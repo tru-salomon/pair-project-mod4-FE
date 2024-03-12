@@ -14,7 +14,7 @@ const EditHeroForm = () => {
 
     useEffect(() => {
         axios
-            .get(`${API}/ids/${key}`)
+            .get(`${API}/stats/${key}`)
             .then(response => {
                 let dob = new Date(response.data.dob);
                 let superDob = `${dob.getFullYear()}-${String(dob.getMonth() + 1).padStart(2, '0')}-${String(dob.getDate()).padStart(2, '0')}`;
@@ -38,7 +38,7 @@ const EditHeroForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`${API}/ids/${key}`, heroData)
+        axios.put(`${API}/stats/${key}`, heroData)
             .then((response) => {
                 console.log('Hero updated:', response.data);
                 navigate(`/superhero/${key}`);
